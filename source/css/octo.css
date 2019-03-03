@@ -466,7 +466,7 @@ body > header {
 aside.sidebar {
     float: none;
     padding: 0 18px 1px;
-    background-color: #f7f7f7;
+    background-color: #f1f1f1;
     border-top: 1px solid #e0e0e0
 }
 
@@ -505,7 +505,7 @@ aside.sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: #f7f7f7;
+        background-color: #f1f1f1;
         border-top: 1px solid #eaeaea
     }
 
@@ -643,7 +643,7 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: #f7f7f7;
+        background-color: #f1f1f1;
         border-top: 1px solid #eaeaea
     }
 
