@@ -14,7 +14,7 @@
 
   <ul class="main-navigation">
     <% Object.keys(theme.menu).forEach(function(key) { %>
-    <li><a href="<%=theme.menu[key]%>"><%=key%></a></li>
+    <li><a href="<%- url_for(theme.menu[key]) %>"><%=key%></a></li>
     <% }); %>
   </ul>
 </nav>
