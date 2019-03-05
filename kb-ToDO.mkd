@@ -1,0 +1,5 @@
+<!doctype markdown>
+
+### add sidebar collapse state
+
+see https://www.goingthewongway.com/octopress-for-static-blogging/#sidebar_state @@ https://archive.is/wHjMw#47%
