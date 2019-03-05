@@ -45,13 +45,20 @@ var thisYear = new Date().getFullYear();
         </script>
     <% } %>
 
-    <%- js('js/modernizr-2.0') %>
 
-    <%- js('js/jquery-1.9.1') %>
+    <!-- <%- js('js/modernizr-2.0.js') %> -->
+    <!-- <script src="<%=url_for('js/modernizr-2.0.js')%>"></script> -->
+    <script defer src="<%=url_for('js/modernizr-2.0.js')%>"></script>
+
+    <!-- <%- js('js/jquery-1.9.1.js') %> -->
+    <!-- <script src="<%=url_for('js/jquery-1.9.1.js')%>"></script> -->
+    <script defer src="<%=url_for('js/jquery-1.9.1.js')%>"></script>
 
     <%- partial('partials/social-scripts') %>
 
-    <%- js('js/octo') %>
+    <!-- <%- js('js/octo.js') %> -->
+    <!-- <script src="<%=url_for('js/octo.js')%>"></script> -->
+    <script defer src="<%=url_for('js/octo.js')%>"></script>
 
     <%- css('css/octo') %>
 

@@ -7,6 +7,8 @@
     <a href="https://github.com/<%=theme.sidebars.github%>">@<%=theme.sidebars.github%></a> on GitHub
 
     <script>
+    // ref: <https://stackoverflow.com/questions/41394983/how-to-defer-inline-javascript> @@ <https://archive.is/qWDe9>
+    window.addEventListener('DOMContentLoaded', function () {
         $(document).ready(function(){
             const options = {
                 user: '<%=theme.sidebars.github%>',
@@ -46,5 +48,6 @@
                 }
             });
         });
+    });
     </script>
 </section>
