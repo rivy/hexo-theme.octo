@@ -1,0 +1,149 @@
+/* ## baseline CSS */
+
+body { margin: /*8px*/ auto; }
+body { font-family: Merriweather, Lora, "Noto Serif", "DejaVu Serif", Palatino, serif; font-size: 1.2rem; line-height: 1.4em; }
+body { text-rendering: optimizeLegibility; -webkit-font-feature-settings: "kern"; -moz-font-feature-settings: "kern"; font-feature-settings: "kern"; }
+h1, h2, h3, h4, h5, h6 { font-family: "Fira Sans Condensed", "Merriweather Sans", "Fira Sans", "Open Sans", "DejaVu Sans", Calibri, Arial, sans-serif; }
+/* h1, h2, h3, h4, h5, h6 { font-family: "Merriweather Sans", "Fira Sans", "Open Sans", "DejaVu Sans", Calibri, Arial, sans-serif; letter-spacing: -0.05em; } */ /* ref: [Condensing a font with CSS](http://stackoverflow.com/questions/13786971/make-a-font-more-condensed-with-css) @@ <http://archive.is/BJDxg>; */
+/*
+h1 { font-size: 2.5em; margin-block-start: 0.67em; margin-block-end: 0.67em; line-height: 1.1em; }
+h2 { font-size: 2em; margin-block-start: 0.83em; margin-block-end: 0.83em; line-height: 1.1em; }
+h3 { font-size: 1.75em; margin-block-start: 1em; margin-block-end: 1em; line-height: 1.1em; }
+h4 { font-size: 1.5em; margin-block-start: 1.33em; margin-block-end: 1.33em; line-height: 1.1em; }
+h5 { font-size: 1.25em; margin-block-start: 1.67em; margin-block-end: 1.67em; line-height: 1.1em; }
+h6 { font-size: 1.25em; margin-block-start: 2.33em; margin-block-end: 2.33em; line-height: 1.1em; }
+*/
+h1 { font-size: 2.5em;  margin-top: 0.67em; margin-bottom: 0.67em; line-height: 1.1em; font-weight: 900; }
+h2 { font-size: 2em;    margin-top: 0.83em; margin-bottom: 0.33em; line-height: 1.1em; }
+h3 { font-size: 1.75em; margin-top: 1em;    margin-bottom: 0.2em;  line-height: 1.1em; letter-spacing: -0.025em; }
+h4 { font-size: 1.5em;  margin-top: 1.33em; margin-bottom: 0.2em;  line-height: 1.1em; }
+h5 { font-size: 1.25em; margin-top: 1.67em; margin-bottom: 0.1em;  line-height: 1.1em; }
+h6 { font-size: 1.25em; margin-top: 2.33em; margin-bottom: 0.1em;  line-height: 1.1em; letter-spacing: -0.025em; }
+
+p, blockquote, ul, fieldset, form, ol, dl, dir, menu { margin-top: 0; margin-bottom: 1.12em; }
+table, code, pre, .codeblock { margin-top: 1.12em; margin-bottom: 1.12em; }
+
+table pre, /*table code,*/ table .codeblock { margin: 0; }
+
+li { margin-bottom: 0.2em; }
+li > p { margin-bottom: 0.2em; }
+
+table {
+  border-collapse: collapse;
+  font-size: 1em;
+}
+table + table {
+  margin-top: 1em;
+}
+thead {
+  background: /* #EEE */ gainsboro;
+  background: rgba(238,238,238,0.8);
+  text-align: left;
+}
+th, td, caption {
+  border: /* 1px */ 0.05em solid /* #EEE */ gainsboro;
+}
+th, td {
+  padding: /* 5px 10px */ 0.35em 0.7em;
+}
+caption {
+  border-collapse: collapse;
+  padding: 0 0.7em;
+}
+
+blockquote { font-size: 0.9em; }
+blockquote {
+  border-left: 0.25em solid /* #EEE */ gainsboro;
+  border-radius: 0.1em;
+  /*margin-left: 40px; margin-right: 40px;*/
+  margin-left: 1em;
+  /*margin-right: 1em;*/
+  padding: 0 0.5em;
+  padding-left: 1em;
+}
+
+/*ol, */ul, dir, menu, dd { margin-left: /*40px*/ 1em; }
+ol { margin-left: 1.2em; }
+
+ol { list-style-type: decimal; }
+ol ol { list-style-type: lower-alpha; }
+ol ol ol { list-style-type: lower-roman; }
+
+ul { list-style-type: disc; }
+
+li { margin-left: 0.2em; padding-left: 0.1em; }
+
+:link, :visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+pre, code, .codeblock { font-family: /*Inconsolata,*/ "Fira Code", "Open Sans Mono", "Anonymous Pro", "Consolas", "Lucida Console", monospace; font-size: 1em; line-height: 1.3em; }
+code { background: gainsboro; background: rgba(238,238,238,0.8); padding: 0 0.2em; }
+code { border-radius: 0.1em; }
+
+/* ## page / media settings */
+body { transition: width 0.3s ease-in-out; }
+/* continuously varying would be preferred over a transition but `calc()` is unable to calculate the fractional distance between a `100vw` and an `Nem` */
+@media all {
+    body { margin: auto; }
+}
+/* ref: [Practical Typography ~ Page Margins](http://practicaltypography.com/page-margins.html)@@<https://archive.is/sOEL6> */
+/* ref: <https://baymard.com/blog/line-length-readability>[`@`](http://archive.is/Dikhd) */
+/* ref: <http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries>[`@`](https://archive.is/cv0mA) */
+/* ref: <http://webtypography.net/2.1.2>[`@`](https://archive.is/Rihn0) */
+/* seek optimum line length ~ 45-90 characters (or, 50-75 characters, from alternate references) */
+/* note: continuously varying would be preferred over a transition but `calc()` is unable to calculate the fractional distance between a `100vw` and an `Nem` */
+/* @media screen and (max-width: 24rem) {
+    body { width: 96%; }
+} */
+@media screen and (min-width: 24rem) {
+    body { width: 100%; }
+}
+@media screen and (min-width: 46.8rem) {
+    body { width: 95%; }
+}
+@media screen and (min-width: 50rem) {
+    body { width: 80%; }
+}
+@media screen and (min-width: 60rem) {
+    body { width: 70%; }
+}
+@media screen and (min-width: 80rem) {
+    body { width: 45em; /* (45em / line) / (0.5em / average char) => 90 average char / line */ }
+}
+@media print {
+    body { font-size: 0.8em; /*width: 75%; margin-left: 15%; margin-top:10%; margin-bottom: 10%;*/ }
+}
+
+body { hyphens: auto; }
+pre, code { hyphens: none; }
+
+blockquote { page-break-inside: avoid; }
+table { page-break-inside:avoid; }
+tr    { page-break-after:auto; page-break-inside:avoid; }
+.codeblock { page-break-inside: avoid; }
+.no-page-break-inside { page-break-inside: avoid; }
+
+/* ## align button appearance between Chrome/Firefox */
+/*
+button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+*/
+button { border-width: 1px; }
+/* ref: https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html @@ https://archive.is/Bv6TZ */
+button { padding: 2px 6px 3px; }
+@supports (-webkit-appearance:none) { button { padding: 2px 6px 4px; } } /* Chrome-only */
+
+/* ## additional customization options (via classes) */
+.--border-bottom { border-bottom: 0.05em solid lightgrey; border-radius: 0.01em; }
+.--width-100percent { width: 100%; }
