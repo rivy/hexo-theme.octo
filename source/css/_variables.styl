@@ -5,8 +5,19 @@ $font-family-tt = "Inconsolata", monospace
 $font-size = 14px
 $line-height = 1.725
 $page-width = 0rem + (hexo-config("page_width") || 39)
+
 // Logo
 $logo-width = 0px + (hexo-config("logo.width") || 0)
 $logo-height = 0px + (hexo-config("logo.height") || 0)
+
 // Colors
 $colors = hexo-config("colorscheme") || "dark"
+
+// $colors-html_background = (hexo-config("colors.html_background") || #252525)
+$colors-html_background = convert( hexo-config("colors.html_background") || "#252525" )
+$colors-aside_background = convert( hexo-config("colors.aside_background") || "#f7f7f7" )
+$colors-bar_background = convert( hexo-config("colors.bar_background") || "#ccc" )
+$colors-header_background = convert( hexo-config("colors.header_background") || "#333" )
+$colors-background = convert( hexo-config("colors.background") || "#f2f2f2" )
+$colors-background_div = convert( hexo-config("colors.background") || "#f8f8f8" )
+$colors-text = convert( hexo-config("colors.text") || "#222" )

@@ -35,3 +35,12 @@ stylesheets:
 
 # Scripts loaded at the end of the body
 scripts:
+
+colors:
+  html_background: null
+  background: null
+  background_div: null
+  text: null
+  aside_background: null
+  bar_background: null
+  header_background: null
