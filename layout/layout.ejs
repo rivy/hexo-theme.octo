@@ -60,12 +60,15 @@ var thisYear = new Date().getFullYear();
     <!-- <script src="<%=url_for('js/octo.js')%>"></script> -->
     <script defer src="<%=url_for('js/octo.js')%>"></script>
 
-    <%- css('css/octo') %>
+    <!-- ref: <https://www.sitepoint.com/critical-rendering-path-css-fast-loading-website> @@ <https://archive.is/KelDc> -->
+    <%- partial('partials/base-preload-polyfill') %>
+    <!-- <%- css('css/octo.css') %> -->
+    <link preload rel="stylesheet" href="<%=url_for('css/octo.css')%>">
 
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+    <link preload href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
           type="text/css">
 
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+    <link preload href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
           type="text/css">
 
     <% if (theme.stylesheets && theme.stylesheets.length) { %>
