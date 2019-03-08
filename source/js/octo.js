@@ -16,8 +16,11 @@ function truthy(b) {
   return (b && !(b.match(/^(false|no|f|n|0|)$/i)));
 }
 
+// NOTE: using `sessionStorage`; HTML5 is required
+// * see <https://www.w3schools.com/html/html5_webstorage.asp> , <https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API>
+
 function renderSidebar() {
-  var collapsed = truthy(Cookies.get('config.sidebars.collapsed'));
+  var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
   if (collapsed) {
     $('body').addClass('collapse-sidebar');
   } else {
@@ -30,14 +33,14 @@ function addSidebarToggler() {
     $('#content').append('<span class="toggle-sidebar"></span>');
     $('.toggle-sidebar').bind('click', function (e) {
       e.preventDefault();
-      var collapsed = truthy(Cookies.get('config.sidebars.collapsed'));
+      var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
       var do_collapse = !collapsed;
       if (do_collapse) {
         $('body').addClass('collapse-sidebar');
       } else {
         $('body').removeClass('collapse-sidebar');
       }
-      Cookies.set('config.sidebars.collapsed', do_collapse);
+      sessionStorage.setItem('config.sidebars.collapsed', do_collapse);
     });
   }
   var sections = $('aside.sidebar > section');
@@ -127,12 +130,12 @@ function renderDeliciousLinks(items) {
 
 $('document').ready(function () {
   testFeatures();
+  renderSidebar();
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
   getNav();
   addSidebarToggler();
-  renderSidebar();
 });
 
 // iOS scaling bug fix
