@@ -14,6 +14,8 @@ var thisYear = new Date().getFullYear();
 <!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="<%=config.language%>"><!--<![endif]-->
 <head>
+    <!-- ref: <https://www.paulirish.com/2009/avoiding-the-fouc-v3> -->
+    <!-- <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script> -->
     <meta charset="UTF-8">
     <title><%= pageTitle %></title>
 
@@ -89,6 +91,7 @@ var thisYear = new Date().getFullYear();
 
 </head>
 <body>
+<!-- <script>document.body.className += ' collapse-sidebar'</script> -->
 
 <%- partial('partials/header') %>
 
@@ -113,6 +116,13 @@ var thisYear = new Date().getFullYear();
         <script src="<%= url %>"></script>
     <% }); %>
 <% } %>
+
+<script>
+// suppress flicker by choosing sidebar collapse within body (js within body blocks render)
+if (sessionStorage.getItem('config.sidebars.collapsed') === 'true') {
+  document.body.className += ' collapse-sidebar'
+}
+</script>
 
 </body>
 </html>

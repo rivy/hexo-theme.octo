@@ -30,6 +30,9 @@
                 t.innerHTML = fragment;
             }
 
+            var data = JSON.parse(sessionStorage.getItem('sidebar-github.repos') || null) || null;
+            console.log('data = ', data);
+
             $.ajax({
                 url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
                 dataType: 'jsonp',
