@@ -19,14 +19,14 @@ function truthy(b) {
 // NOTE: using `sessionStorage`; HTML5 is required
 // * see <https://www.w3schools.com/html/html5_webstorage.asp> , <https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API>
 
-function renderSidebar() {
-  var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
-  if (collapsed) {
-    $('body').addClass('collapse-sidebar');
-  } else {
-    $('body').removeClass('collapse-sidebar');
-  }
-}
+// function renderSidebar() {
+//   var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
+//   if (collapsed) {
+//     $('body').addClass('collapse-sidebar');
+//   } else {
+//     $('body').removeClass('collapse-sidebar');
+//   }
+// }
 
 function addSidebarToggler() {
   if (!$('body').hasClass('sidebar-footer')) {
@@ -130,7 +130,7 @@ function renderDeliciousLinks(items) {
 
 $('document').ready(function () {
   testFeatures();
-  renderSidebar();
+  // renderSidebar();
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
