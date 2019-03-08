@@ -31,6 +31,13 @@ var thisYear = new Date().getFullYear();
         <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
     <% } %>
 
+    <!--
+    <script type="text/javascript">
+      var _config = window._config || {};
+      _config.sidebars_collapsed = "<%=theme.sidebars.collapsed%>";
+    </script>
+    -->
+
     <% if (theme.googleAnalytics) { %>
         <script type="text/javascript">
             var _gaq = window._gaq || [];
@@ -49,6 +56,8 @@ var thisYear = new Date().getFullYear();
     <!-- <%- js('js/modernizr-2.0.js') %> -->
     <!-- <script src="<%=url_for('js/modernizr-2.0.js')%>"></script> -->
     <script defer src="<%=url_for('js/modernizr-2.0.js')%>"></script>
+
+    <script defer src="<%=url_for('js/js.cookie-2.2.0.js')%>"></script>
 
     <!-- <%- js('js/jquery-1.9.1.js') %> -->
     <!-- <script src="<%=url_for('js/jquery-1.9.1.js')%>"></script> -->

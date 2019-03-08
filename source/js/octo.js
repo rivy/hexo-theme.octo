@@ -12,16 +12,32 @@ function getNav() {
   });
 }
 
+function truthy(b) {
+  return (b && !(b.match(/^(false|no|f|n|0|)$/i)));
+}
+
+function renderSidebar() {
+  var collapsed = truthy(Cookies.get('config.sidebars.collapsed'));
+  if (collapsed) {
+    $('body').addClass('collapse-sidebar');
+  } else {
+    $('body').removeClass('collapse-sidebar');
+  }
+}
+
 function addSidebarToggler() {
   if (!$('body').hasClass('sidebar-footer')) {
     $('#content').append('<span class="toggle-sidebar"></span>');
     $('.toggle-sidebar').bind('click', function (e) {
       e.preventDefault();
-      if ($('body').hasClass('collapse-sidebar')) {
-        $('body').removeClass('collapse-sidebar');
-      } else {
+      var collapsed = truthy(Cookies.get('config.sidebars.collapsed'));
+      var do_collapse = !collapsed;
+      if (do_collapse) {
         $('body').addClass('collapse-sidebar');
+      } else {
+        $('body').removeClass('collapse-sidebar');
       }
+      Cookies.set('config.sidebars.collapsed', do_collapse);
     });
   }
   var sections = $('aside.sidebar > section');
@@ -116,6 +132,7 @@ $('document').ready(function () {
   addCodeLineNumbers();
   getNav();
   addSidebarToggler();
+  renderSidebar();
 });
 
 // iOS scaling bug fix
