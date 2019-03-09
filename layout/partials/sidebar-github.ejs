@@ -33,23 +33,32 @@
             var data = JSON.parse(sessionStorage.getItem('sidebar-github.repos') || null) || null;
             console.log('data = ', data);
 
-            $.ajax({
-                url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
-                dataType: 'jsonp',
-                error: function (err) {
-                    $(options.target + ' li.loading').addClass('error').text("Error loading feed");
-                },
-                success: function(data) {
-                    var repos = [];
-                    if (!data || !data.data) { return; }
-                    for (var i = 0; i < data.data.length; i++) {
-                        if (options.skip_forks && data.data[i].fork) { continue; }
-                        repos.push(data.data[i]);
+            var cached_github_repos = sessionStorage && sessionStorage.getItem(STORE_KEY_GITHUB_REPOS);
+            if (!cached_github_repos) {
+                  $.ajax({
+                    url: "https://api.github.com/users/"+options.user+"/repos?sort=pushed&callback=?",
+                    dataType: 'jsonp',
+                    error: function (err) {
+                        $(options.target + ' li.loading').addClass('error').text("Error loading feed");
+                    },
+                    success: function(data) {
+                        var repos = [];
+                        if (!data || !data.data) { return; }
+                        for (var i = 0; i < data.data.length; i++) {
+                            if (options.skip_forks && data.data[i].fork) { continue; }
+                            repos.push(data.data[i]);
+                        }
+                        if (options.count) { repos.splice(options.count); }
+                        render(options.target, repos);
+                        if (sessionStorage) {
+                            sessionStorage.setItem(STORE_KEY_GITHUB_REPOS, JSON.stringify(repos));
+                        }
                     }
-                    if (options.count) { repos.splice(options.count); }
-                    render(options.target, repos);
-                }
-            });
+                });
+            } else {
+                var repos = JSON.parse(cached_github_repos);
+                render(options.target, JSON.parse(cached_github_repos));
+            }
         });
     });
     </script>

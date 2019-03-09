@@ -14,35 +14,28 @@ function getNav() {
   });
 }
 
-function truthy(b) {
-  return (b && !(b.match(/^(false|no|f|n|0|)$/i)));
+function stringy_truthy(b) {
+  return (b && !(b.match(/^(false|f|no|n|off|0|)$/i)));
 }
-
-// NOTE: using `sessionStorage`; HTML5 is required
-// * see <https://www.w3schools.com/html/html5_webstorage.asp> , <https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API>
-
-// function renderSidebar() {
-//   var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
-//   if (collapsed) {
-//     $('body').addClass('collapse-sidebar');
-//   } else {
-//     $('body').removeClass('collapse-sidebar');
-//   }
-// }
 
 function addSidebarToggler() {
   if (!$('body').hasClass('sidebar-footer')) {
-    $('#content').append('<span class="toggle-sidebar"></span>');
     $('.toggle-sidebar').bind('click', function (e) {
+      // NOTE: using `sessionStorage` for state retention between pages; requires HTML5+ (graceful degradation)
+      // * see <https://www.w3schools.com/html/html5_webstorage.asp> , <https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API>
+      var collapsed_config_key = STORE_KEY_SIDEBARS_COLLAPSED;
+      var collapsed_class = DOM_CLASS_SIDEBARS_COLLAPSED;
       e.preventDefault();
-      var collapsed = truthy(sessionStorage.getItem('config.sidebars.collapsed'));
+      var collapsed = stringy_truthy(sessionStorage && sessionStorage.getItem(collapsed_config_key));
       var do_collapse = !collapsed;
       if (do_collapse) {
-        $('body').addClass('collapse-sidebar');
+        $('body').addClass(collapsed_class);
       } else {
-        $('body').removeClass('collapse-sidebar');
+        $('body').removeClass(collapsed_class);
       }
-      sessionStorage.setItem('config.sidebars.collapsed', do_collapse);
+      if (sessionStorage) {
+        sessionStorage.setItem(collapsed_config_key, do_collapse);
+      }
     });
   }
   var sections = $('aside.sidebar > section');
