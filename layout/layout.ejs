@@ -12,117 +12,133 @@ var thisYear = new Date().getFullYear();
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7" lang="<%=config.language%>"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="<%=config.language%>"><!--<![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="<%=config.language%>">
+<!--<![endif]-->
+
 <head>
-    <!-- ref: <https://www.paulirish.com/2009/avoiding-the-fouc-v3> -->
-    <!-- <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script> -->
-    <meta charset="UTF-8">
-    <title><%= pageTitle %></title>
+  <!-- ref: <https://www.paulirish.com/2009/avoiding-the-fouc-v3> -->
+  <!-- <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script> -->
+  <meta charset="UTF-8">
+  <title>
+    <%= pageTitle %>
+  </title>
 
-    <meta name="author" content="<%= config.author %>">
+  <meta name="author" content="<%= config.author %>">
 
-    <%- favicon_tag('/images/favicon.png') %>
+  <%- favicon_tag('/images/favicon.png') %>
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
-    <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
+  <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
 
-    <% if (theme.atom) {%>
-        <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
-    <% } %>
+  <% if (theme.atom) {%>
+  <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
+  <% } %>
 
-    <!--
+  <!--
     <script type="text/javascript">
       var _config = window._config || {};
       _config.sidebars_collapsed = "<%=theme.sidebars.collapsed%>";
     </script>
     -->
 
-    <% if (theme.googleAnalytics) { %>
-        <script type="text/javascript">
-            var _gaq = window._gaq || [];
-            _gaq.push(['_setAccount', '<%=theme.googleAnalytics%>']);
-            _gaq.push(['_trackPageview']);
+  <% if (theme.googleAnalytics) { %>
+  <script type="text/javascript">
+    var _gaq = window._gaq || [];
+    _gaq.push(['_setAccount', '<%=theme.googleAnalytics%>']);
+    _gaq.push(['_trackPageview']);
 
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-    <% } %>
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+        '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <% } %>
 
 
-    <!-- <%- js('js/modernizr-2.0.js') %> -->
-    <!-- <script src="<%=url_for('js/modernizr-2.0.js')%>"></script> -->
-    <script defer src="<%=url_for('js/modernizr-2.0.js')%>"></script>
+  <!-- <%- js('js/modernizr-2.0.js') %> -->
+  <!-- <script src="<%=url_for('js/modernizr-2.0.js')%>"></script> -->
+  <script defer src="<%=url_for('js/modernizr-2.0.js')%>"></script>
 
-    <!-- <script defer src="<%=url_for('js/js.cookie-2.2.0.js')%>"></script> -->
+  <!-- <script defer src="<%=url_for('js/js.cookie-2.2.0.js')%>"></script> -->
 
-    <!-- <%- js('js/jquery-1.9.1.js') %> -->
-    <!-- <script src="<%=url_for('js/jquery-1.9.1.js')%>"></script> -->
-    <script defer src="<%=url_for('js/jquery-1.9.1.js')%>"></script>
+  <!-- <%- js('js/jquery-1.9.1.js') %> -->
+  <!-- <script src="<%=url_for('js/jquery-1.9.1.js')%>"></script> -->
+  <script defer src="<%=url_for('js/jquery-1.9.1.js')%>"></script>
 
-    <%- partial('partials/social-scripts') %>
+  <%- partial('partials/social-scripts') %>
 
-    <!-- <%- js('js/octo.js') %> -->
-    <!-- <script src="<%=url_for('js/octo.js')%>"></script> -->
-    <script defer src="<%=url_for('js/octo.js')%>"></script>
+  <!-- <%- js('js/octo.js') %> -->
+  <!-- <script src="<%=url_for('js/octo.js')%>"></script> -->
+  <script defer src="<%=url_for('js/octo.js')%>"></script>
 
-    <!-- ref: <https://www.sitepoint.com/critical-rendering-path-css-fast-loading-website> @@ <https://archive.is/KelDc> -->
-    <%- partial('partials/base-preload-polyfill') %>
-    <!-- <%- css('css/octo.css') %> -->
-    <link preload rel="stylesheet" href="<%=url_for('css/octo.css')%>">
+  <!-- ref: <https://www.sitepoint.com/critical-rendering-path-css-fast-loading-website> @@ <https://archive.is/KelDc> -->
+  <%- partial('partials/base-preload-polyfill') %>
+  <!-- <%- css('css/octo.css') %> -->
+  <link preload rel="stylesheet" href="<%=url_for('css/octo.css')%>">
 
-    <link preload href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
-          type="text/css">
+  <link preload href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet"
+    type="text/css">
 
-    <link preload href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
-          type="text/css">
+  <link preload href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+    type="text/css">
 
-    <% if (theme.stylesheets && theme.stylesheets.length) { %>
-        <!-- stylesheets list from config.yml -->
-        <% theme.stylesheets.forEach(function(url) { %>
-            <link rel="stylesheet" href="<%= url %>">
-        <% }); %>
-    <% } %>
+  <% if (theme.stylesheets && theme.stylesheets.length) { %>
+  <!-- stylesheets list from config.yml -->
+  <% theme.stylesheets.forEach(function(url) { %>
+  <link rel="stylesheet" href="<%= url %>">
+  <% }); %>
+  <% } %>
 
 </head>
+
 <body>
-<!-- <script>document.body.className += ' collapse-sidebar'</script> -->
+  <!-- <script>document.body.className += ' collapse-sidebar'</script> -->
 
-<%- partial('partials/header') %>
+  <%- partial('partials/header') %>
 
-<%- partial('partials/navigation') %>
+  <%- partial('partials/navigation') %>
 
-<div id="main">
+  <div id="main">
     <div id="content">
-        <%- body %>
+      <%- body %>
     </div>
-</div>
+  </div>
 
-<footer role="contentinfo">
+  <footer role="contentinfo">
     <p>
-        Copyright © <%= thisYear %> - <%= config.author %> -
-        <span class="credit">Generated using <a href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for <a href="http://hexo.io">Hexo</a></span>
+      Copyright ©
+      <%= thisYear %> -
+      <%= config.author %> -
+      <span class="credit">Generated using <a href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for
+        <a href="http://hexo.io">Hexo</a></span>
     </p>
-</footer>
+  </footer>
 
-<% if (theme.scripts && theme.scripts.length) { %>
-    <!-- scripts list from theme config.yml -->
-    <% theme.scripts.forEach(function(url) { %>
-        <script src="<%= url %>"></script>
-    <% }); %>
-<% } %>
+  <% if (theme.scripts && theme.scripts.length) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(function(url) { %>
+  <script src="<%= url %>"></script>
+  <% }); %>
+  <% } %>
 
-<script>
-// suppress flicker by choosing sidebar collapse within body (js within body blocks render)
-if (sessionStorage.getItem('config.sidebars.collapsed') === 'true') {
-  document.body.className += ' collapse-sidebar'
-}
-</script>
+  <script>
+    // suppress flicker by choosing sidebar collapse within body (js within body blocks render)
+    if (sessionStorage.getItem('config.sidebars.collapsed') === 'true') {
+      document.body.className += ' collapse-sidebar'
+    }
+
+  </script>
 
 </body>
+
 </html>
