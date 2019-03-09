@@ -34,16 +34,17 @@ var thisYear = new Date().getFullYear();
 
   <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
 
+  <script>
+    // constants
+    var DEFAULT_SIDEBARS_COLLAPSED = '<%= theme.sidebars.collapsed %>';
+    var DOM_CLASS_SIDEBARS_COLLAPSED = 'collapse-sidebar';
+    var STORE_KEY_GITHUB_REPOS = '.github.repos';
+    var STORE_KEY_SIDEBARS_COLLAPSED = '.sidebars.collapsed';
+  </script>
+
   <% if (theme.atom) {%>
   <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
   <% } %>
-
-  <!--
-    <script type="text/javascript">
-      var _config = window._config || {};
-      _config.sidebars_collapsed = "<%=theme.sidebars.collapsed%>";
-    </script>
-    -->
 
   <% if (theme.googleAnalytics) { %>
   <script type="text/javascript">
@@ -132,11 +133,21 @@ var thisYear = new Date().getFullYear();
   <% } %>
 
   <script>
-    // suppress flicker by choosing sidebar collapse within body (js within body blocks render)
-    if (sessionStorage.getItem('config.sidebars.collapsed') === 'true') {
-      document.body.className += ' collapse-sidebar'
-    }
-
+    (function () {
+      // suppress styling flicker (determine and set component styling/visibility prior to body render; * js within the body blocks rendering until complete)
+      // * sidebar ~ collapsed?
+      var collapsed = sessionStorage && sessionStorage.getItem(STORE_KEY_SIDEBARS_COLLAPSED);
+      if (collapsed == null) {
+        // missing/null => use theme default
+        collapsed = DEFAULT_SIDEBARS_COLLAPSED;
+      }
+      collapsed = !!(collapsed && !(collapsed.match && collapsed.match(/^(false|f|no|n|off|0|)$/i))); // stringy truthy conversion to boolean
+      if (collapsed) {
+        document.body.className += ' ' + DOM_CLASS_SIDEBARS_COLLAPSED;
+      }
+      // * sidebar ~ add toggler
+      document.getElementById('content').innerHTML += '<span class="toggle-sidebar"></span>';
+    })();
   </script>
 
 </body>
