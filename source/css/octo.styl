@@ -16,6 +16,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline
 }
 
+// suppress "scrollbar jump" styling flicker between similar centered pages
+@media screen and (min-width: 768px) {
+    html {
+        overflow-y: scroll;
+        // overflow-x: none;
+        // ..or.. (see <https://aykevl.nl/2014/09/fix-jumping-scrollbar> @@ <http://archive.is/caLiK>)
+        // margin-left: calc(100vw - 100%);
+        // margin-right: 0;
+    }
+}
+
 html {
     line-height: 1
 }
