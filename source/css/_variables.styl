@@ -1,7 +1,22 @@
 // Fonts
-$font-family-body = "Menlo", "Meslo LG", monospace
-$font-family-mono = "Menlo", "Meslo LG", monospace
-$font-family-tt = "Inconsolata", monospace
+
+// .heading: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif
+// .sans: "PT Sans", "Helvetica Neue", Arial, sans-serif
+// .serif: "PT Serif", Georgia, Times, "Times New Roman", serif
+// .mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+
+"octo" font family
+$font-family-heading = "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif
+$font-family-sans = "PT Sans", "Helvetica Neue", Arial, sans-serif
+$font-family-serif = "PT Serif", Georgia, Times, "Times New Roman", serif
+$font-family-mono = Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+/* */
+$font-family-subheading = $font-family-sans
+$font-family-header = $font-family-heading
+$font-family-subheader = $font-family-header
+$font-family-section = $font-family-sans
+$font-family-body = $font-family-serif
+
 $font-size = 14px
 $line-height = 1.725
 $page-width = 0rem + (hexo-config("page_width") || 39)

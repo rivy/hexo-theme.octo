@@ -121,31 +121,34 @@ body > div > div {
 }
 
 .heading, body > header h1, h1, h2, h3, h4, h5, h6 {
-    font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif
+    font-family: $font-family-heading
 }
 
 .sans, body > header h2, article header p.meta, article > footer, #content .blog-index footer, html .gist .gist-file .gist-meta, #blog-archives a.category, #blog-archives time, aside.sidebar section, body > footer {
-    font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif
+    font-family: $font-family-subheading
 }
 
+h3, h4, h5, h6 {
+    font-family: $font-family-section
+}
 .serif, body, #content .blog-index a[rel=full-article] {
-    font-family: "PT Serif", Georgia, Times, "Times New Roman", serif
+    font-family: $font-family-body
 }
 
 .mono, pre, code, tt, p code, li code {
-    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace
+    font-family: $font-family-mono
 }
 
 body > header h1 {
     font-size: 2.2em;
-    font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
+    font-family: $font-family-header;
     font-weight: normal;
     line-height: 1.2em;
     margin-bottom: 0.6667em
 }
 
 body > header h2 {
-    font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif
+    font-family: $font-family-subheader
 }
 
 body {
@@ -764,7 +767,7 @@ body > nav form {
 body > nav form .search {
     padding: .15em .5em .15em;
     font-size: .85em;
-    font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: $font-family-sans;
     line-height: 1.1em;
     width: 95%;
     -webkit-border-radius: 0.5em;
@@ -867,7 +870,7 @@ body > nav ul {
 
     body > nav a {
         color: #6b6b6b;
-        font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+        font-family: $font-family-sans;
         text-shadow: #ebebeb 0 1px;
         float: left;
         text-decoration: none;
@@ -1464,7 +1467,7 @@ p pre code, li pre code {
 .pre-code,
 html .gist .gist-file .gist-syntax .highlight pre,
 .highlight table td.code pre {
-    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !important;
+    font-family: $font-family-mono !important;
     overflow: scroll;
     overflow-y: hidden;
     display: block;
