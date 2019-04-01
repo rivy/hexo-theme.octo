@@ -1,0 +1,27 @@
+/*! CSS Style Guide: http://codeguide.co/#css */
+
+$scheme    = hexo-config('scheme') ? hexo-config('scheme') : null;
+
+$custom_styles = hexo-config('custom_file_path.styles') ? "../../../../" + hexo-config('custom_file_path.styles') : custom;
+$custom_mixins = hexo-config('custom_file_path.mixins') ? "../../../../../" + hexo-config('custom_file_path.mixins') : custom;
+$custom_variables = hexo-config('custom_file_path.variables') ? "../../../../../" + hexo-config('custom_file_path.variables') : custom;
+
+$variables = base $scheme $custom_variables;
+$mixins    = base $scheme $custom_mixins;
+$styles    = base $scheme $custom_styles;
+
+// Variables Layer
+for $variable in $variables
+  @import "_variables/" + $variable if $variable;
+
+// Mixins Layer
+for $mixin in $mixins
+  @import "_mixins/" + $mixin if $mixin;
+
+//...
+
+@import "nib"
+
+// Styles Layer
+for $style in $styles
+  @import "_styles/" + $style if $style;

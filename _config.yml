@@ -1,3 +1,17 @@
+
+# User theme customization (optional; via custom files)
+# * (modified from the ['NexT' hexo theme](https://github.com/theme-next/hexo-theme-next))
+# * define custom file paths
+# * eg, you want to put your custom styles file outside theme directory, in <root> `source/_data`, set `styles: source/_data/styles.styl`; use <root> relative paths
+custom_file_path:
+  # # Default paths: layout/_custom/*
+  # head: source/_data/head.swig
+  # header: source/_data/header.swig
+  # sidebar: source/_data/sidebar.swig
+  variables: null   # default path: <theme>/source/css/_variables/custom.styl
+  mixins: null  # default path: <theme>/source/css/_mixins/custom.styl
+  styles: null  # default path: <theme>/source/css/_styles/custom.styl
+
 # Page language (html attribute)
 language: en
 
