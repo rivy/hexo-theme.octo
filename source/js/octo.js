@@ -1,3 +1,5 @@
+// ToDO: remove "flash video" code
+
 function getNav() {
   var mainNav = $('ul.main-navigation, ul[role=main-navigation]').before('<fieldset class="mobile-nav">')
   var mobileNav = $('fieldset.mobile-nav').append('<select>');
@@ -135,8 +137,10 @@ function renderDeliciousLinks(items) {
 $('document').ready(function () {
   testFeatures();
   // renderSidebar();
-  wrapFlashVideos();
-  flashVideoFallback();
+  { // ToDO: remove "flash video" code
+    wrapFlashVideos();
+    flashVideoFallback();
+  }
   addCodeLineNumbers();
   getNav();
   addSidebarToggler();
