@@ -1,0 +1,175 @@
+<% eval(include('include/blocks.js')) %>
+<%
+var pageTitle = page.title || config.title || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+
+var thisYear = new Date().getFullYear();
+%>
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7" lang="<%=config.language%>"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8" lang="<%=config.language%>"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="no-js" lang="<%=config.language%>">
+<!--<![endif]-->
+
+<!-- spell-checker:ignore () PageView WOFF crossOrigin modernizr octo repo repos -->
+
+<head>
+  <!-- ref: <https://www.paulirish.com/2009/avoiding-the-fouc-v3> -->
+  <!-- <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script> -->
+  <meta charset="UTF-8">
+  <title>
+    <%= pageTitle %>
+  </title>
+
+  <meta name="author" content="<%= config.author %>">
+
+  <%- favicon_tag('/images/favicon.png') %>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  <link rel="canonical" href="<%=config.url + '/' + page.canonical_path.replace('index.html', '')%>">
+
+  <!-- <%- css('css/octo.css') %> -->
+  <!-- <link rel="preload" as="style" href="<%=url_for('css/octo.css')%>" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="<%=url_for('css/octo.css')%>"></noscript> -->
+  <!-- <link rel="stylesheet" href="<%=url_for('css/octo.css')%>"> -->
+  <link rel="stylesheet" href="<%=url_for('css/main.css')%>">
+
+  <!-- <%- css('css/fonts.css') %> -->
+  <!-- <link rel="preload" as="style" href="<%=url_for('css/fonts.css')%>" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="<%=url_for('css/fonts.css')%>"></noscript> -->
+  <link rel="stylesheet" href="<%=url_for('css/fonts.css')%>">
+
+  <% if (theme.stylesheets && theme.stylesheets.length) { %>
+  <!-- stylesheets list from config.yml -->
+  <% theme.stylesheets.forEach(function(url) { %>
+  <link rel="stylesheet" href="<%= url %>">
+  <% }); %>
+  <% } %>
+
+  <link rel="preload" href="<%=url_for('fonts/pt-serif-v10-latin-regular.woff2')%>" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="<%=url_for('fonts/pt-sans-v10-latin-regular.woff2')%>" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="<%=url_for('fonts/pt-serif-v10-latin-700.woff2')%>" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <link rel="preload" href="<%=url_for('fonts/pt-serif-v10-latin-italic.woff2')%>" as="font" type="font/woff2"
+    crossorigin="anonymous">
+
+  <script>
+    // constants
+    var DEFAULT_SIDEBARS_COLLAPSED = '<%= theme.sidebars.collapsed %>';
+    var DOM_CLASS_SIDEBARS_COLLAPSED = 'collapse-sidebar';
+    var STORE_KEY_GITHUB_REPOS = '.github.repos';
+    var STORE_KEY_SIDEBARS_COLLAPSED = '.sidebars.collapsed';
+  </script>
+
+  <% if (theme.atom) {%>
+  <link rel="alternate" href="<%=url_for('/atom.xml')%>" type="application/atom+xml">
+  <% } %>
+
+  <% if (theme.googleAnalytics) { %>
+  <script type="text/javascript">
+    var _gaq = window._gaq || [];
+    _gaq.push(['_setAccount', '<%=theme.googleAnalytics%>']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+        '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <% } %>
+
+
+  <!-- <%- js('js/modernizr-2.0.js') %> -->
+  <!-- <script src="<%=url_for('js/modernizr-2.0.js')%>"></script> -->
+  <script defer src="<%=url_for('js/modernizr-2.0.js')%>"></script>
+
+  <!-- <script defer src="<%=url_for('js/js.cookie-2.2.0.js')%>"></script> -->
+
+  <!-- <%- js('js/jquery-1.9.1.js') %> -->
+  <!-- <script src="<%=url_for('js/jquery-1.9.1.js')%>"></script> -->
+  <script defer src="<%=url_for('js/jquery-1.9.1.js')%>"></script>
+
+  <%- partial('partials/social-scripts') %>
+
+  <!-- <%- js('js/octo.js') %> -->
+  <!-- <script src="<%=url_for('js/octo.js')%>"></script> -->
+  <script defer src="<%=url_for('js/octo.js')%>"></script>
+
+  <!-- ref: <https://www.sitepoint.com/critical-rendering-path-css-fast-loading-website> @@ <https://archive.is/KelDc> -->
+  <!-- ref: <https://github.com/filamentgroup/loadCSS/blob/master/README.md> -->
+  <!-- ref: <https://www.filamentgroup.com/lab/async-css.html> -->
+  <%- partial('partials/base-preload-polyfill') %>
+
+</head>
+
+<body>
+  <!-- <script>document.body.className += ' collapse-sidebar'</script> -->
+
+  <%- partial('partials/header') %>
+
+  <%- partial('partials/navigation') %>
+
+  <div id="main">
+    <div id="content">
+      <%- block('body','*Missing* body content'); %>
+      <!-- <%!- body %> -->
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <p>
+      Copyright ©
+      <%= thisYear %> -
+      <%= config.author %> -
+      <span class="credit">Generated using <a href="https://github.com/jbreckmckye/hexo-theme-octo">Octo theme</a> for
+        <a href="http://hexo.io">Hexo</a></span>
+    </p>
+  </footer>
+
+  <% if (theme.scripts && theme.scripts.length) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(function(url) { %>
+  <script src="<%= url %>"></script>
+  <% }); %>
+  <% } %>
+
+  <script>
+    (function () {
+      // suppress styling flicker (determine and set component styling/visibility prior to body render; * js within the body blocks rendering until complete)
+      // * sidebar ~ collapsed?
+      var collapsed = sessionStorage && sessionStorage.getItem(STORE_KEY_SIDEBARS_COLLAPSED);
+      if (collapsed == null) {
+        // missing/null => use theme default
+        collapsed = DEFAULT_SIDEBARS_COLLAPSED;
+      }
+      collapsed = !!(collapsed && !(collapsed.match && collapsed.match(/^(false|f|no|n|off|0|)$/i))); // stringy truthy conversion to boolean
+      if (collapsed) {
+        document.body.className += ' ' + DOM_CLASS_SIDEBARS_COLLAPSED;
+      }
+      // * sidebar ~ add toggler
+      document.getElementById('content').innerHTML += '<span class="toggle-sidebar"></span>';
+    })();
+  </script>
+
+  <!-- <link preload href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic|PT+Sans:regular,italic,bold,bolditalic"
+  rel="stylesheet" type="text/css"> -->
+</body>
+
+</html>
