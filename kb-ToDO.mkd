@@ -1,5 +1,50 @@
-<!doctype markdown>
+<!DOCTYPE markdown><!-- markdownlint-disable no-inline-html -->
+<meta charset="utf-8" content="text/markdown" lang="en">
+<!-- -## editors ## (emacs/sublime) -*- coding: utf8-nix; tab-width: 2; mode: markdown; indent-tabs-mode: nil; basic-offset: 2; st-word_wrap: 'true' -*- ## (jEdit) :tabSize=2:indentSize=2:mode=markdown: ## (notepad++) vim:tabstop=2:syntax=markdown:expandtab:smarttab:softtabstop=2 ## modeline (see <https://archive.is/djTUD>@@<http://webcitation.org/66W3EhCAP> ) -->
+<!-- spell-checker:ignore expandtab markdownlint modeline smarttab softtabstop -->
 
-### add sidebar collapse state
+<!-- markdownlint-disable heading-increment ul-style -->
+<!-- spell-checker:ignore () octo Coloors -->
 
-see https://www.goingthewongway.com/octopress-for-static-blogging/#sidebar_state @@ https://archive.is/wHjMw#47%
+# 'octo' theme ToDO list
+
+- from [OctoPress](http://octopress.org)<sup>[[`@`](https://archive.is/ZncqB)]</sup>
+
+### [ ] add semantic color
+
+- ref: [ThemeUI](https://theme-ui.com/theming)<sup>[[`@`](https://archive.is/9xRa4)]</sup>
+
+- colors/palettes
+  - ref: <https://theme-ui.com/theming/#colors>
+  - ref: [Coloors.co](https://coolors.co) => color palette generator
+  - ref: [ColorMind.io](http://colormind.io) => color scheme generator
+    - demo bootstrap web page at <http://colormind.io/bootstrap/#>
+    - eg ...
+      - Light shades (eg, "BLACK HAZE", #F3F7F8) Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+      - Light accent (eg, "TUSSOCK", #C3854C) Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
+      - Main brand color (eg, "SAN MARINO", #4966B1) This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+      - Dark accent (eg, "HIPPIE PINK", #A73F56) Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
+      - Dark shades (eg, "BALTIC SEA", #392F37) Use as the text color for dark-on-light designs, or as the background for inverted designs.
+
+| Key          | Description                                                                                                     |
+|:-------------|:----------------------------------------------------------------------------------------------------------------|
+| text         | Body foreground color                                                                                           |
+| background   | Body background color                                                                                           |
+| primary      | Primary brand color for links, buttons, etc.                                                                    |
+| secondary    | A secondary brand color for alternative styling                                                                 |
+| accent       | A contrast color for emphasizing UI                                                                             |
+| highlight    | A background color for highlighting text                                                                        |
+| muted        | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
+| success      | ...                                                                                                             |
+| failure      | ...                                                                                                             |
+| info         | ...                                                                                                             |
+| warning      | ...                                                                                                             |
+| danger/error | ...                                                                                                             |
+
+- modes/themes
+  - ref: <https://theme-ui.com/theming/#color-modes>
+  - 'dark', ...
+
+### [x] add sidebar collapse state
+
+see <https://www.goingthewongway.com/octopress-for-static-blogging/#sidebar_state>@@<https://archive.is/wHjMw#47%>
