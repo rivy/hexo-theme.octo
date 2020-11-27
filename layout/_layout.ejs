@@ -1,4 +1,7 @@
 <%
+// default template layout
+%>
+<%
 var pageTitle = page.title || config.title || '';
 if (is_archive()) pageTitle = 'Archives';
 if (is_tag()) pageTitle = 'Tag: ' + page.tag;
