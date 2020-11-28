@@ -758,11 +758,11 @@ body > nav form {
     -moz-background-clip: padding;
     background-clip: padding-box;
     margin: 0;
-    padding: 0.15em 0 0 0;
+    padding: 0.1em 0 0 0;
 }
 
 body > nav form .search {
-    padding: .15em .5em .15em;
+    padding: .25em .5em .15em;
     font-size: .85em;
     font-family: $font-family-sans;
     line-height: 1.1em;
@@ -791,6 +791,11 @@ body > nav form .search:focus {
     box-shadow: #80b1df 0 0 4px, #80b1df 0 0 3px inset;
     background-color: #fff;
     outline: none
+}
+
+body > nav form .search::placeholder {
+  opacity: 0.5;
+  color: $colors['text-dim'];
 }
 
 body > nav fieldset[role=search] {
@@ -902,7 +907,7 @@ body > nav ul {
     }
 
     body > nav form .search {
-        width: 93%;
+        width: 95%;
         font-size: .95em;
         line-height: 1.2em
     }
