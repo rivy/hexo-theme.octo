@@ -1,4 +1,9 @@
+<%
+const amount_default = 10
+const amount = (theme.sidebars.recent && (typeof theme.sidebars.recent === 'number') && theme.sidebars.recent > 0) ? theme.sidebars.recent : amount_default;
+%>
+
 <section class="<%=sectionClass%>">
     <h1>Recent Posts</h1>
-    <%- list_posts({amount: 10}) %>
+    <%- list_posts({amount}) %>
 </section>
