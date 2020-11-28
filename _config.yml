@@ -28,7 +28,7 @@ social:
 # Page sidebars
 # Components will appear in the order they are specified
 sidebars:
-  recent: true # boolean to display 10 most recent posts
+  recent: true # boolean | number => display the most recent posts (default of 10 most recent)
   featured: false # boolean to list all posts with tag 'featured'
   github: your_github # string to point to a Github profile | false to disable
   collapsed: false # boolean to display sidebar as collapsed
