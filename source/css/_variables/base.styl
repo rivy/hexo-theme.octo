@@ -43,48 +43,55 @@ $logo-width = 0px + (hexo-config("logo.width") || 0)
 $logo-height = 0px + (hexo-config("logo.height") || 0)
 
 // Colors
-$colors = hexo-config("colorscheme") || "dark"
+$color_scheme = hexo-config("colorscheme") || "dark"
 
-$color-WhiteSmoke = whitesmoke /* #f5f5f5 */
+$color-Gray13 = #212121
 $color-Gray14 = #242424
 $color-Gray20 = #333333
 $color-Gray80 = #cccccc
 $color-Gray95 = #f2f2f2
-$color-Gray13 = #212121
-$color-GhostWhite = ghostwhite /* #f8f8ff */
 $color-Gray97 = #f7f7f7
 $color-Gainsboro = gainsboro /* #dcdcdc */
+$color-GhostWhite = ghostwhite /* #f8f8ff */
+$color-WhiteSmoke = whitesmoke /* #f5f5f5 */
 //
-$color-222 = #222
-$color-333 = #333
-$color-ccc = #ccc
+$color-222 = #222 /* #222222 ~= Gray13 */
+$color-333 = #333 /* #333333 == Gray20 */
+$color-ccc = #ccc /* #cccccc == Gray80 */
 $color-f8f8f8 = #f8f8f8
 
 // | text         | Body foreground color                                                                                           |
 // | background   | Body background color                                                                                           |
+
 // | primary      | Primary brand color for links, buttons, etc.                                                                    |
 // | secondary    | A secondary brand color for alternative styling                                                                 |
 // | accent       | A contrast color for emphasizing UI                                                                             |
 // | highlight    | A background color for highlighting text                                                                        |
 // | muted        | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
+
 // | success      | ...                                                                                                             |
 // | failure      | ...                                                                                                             |
 // | info         | ...                                                                                                             |
 // | warning      | ...                                                                                                             |
 // | danger/error | ...                                                                                                             |
 
-// $colors-text = $color-Gray13
+// * default colors
+$colors = {}
+$colors[background] = $color-Gray95
+$colors[background_html] = $color-Gray14
+$colors[background_aside] = $color-Gray97
+$colors[background_bar] = $color-Gray80
+$colors[background_header] = $color-Gray20
+$colors[background_div] = $color-WhiteSmoke
+$colors[text] = $color-Gray13
+$colors[failure] = #DA2067
+$colors[danger] = #DA2067
+$colors[error] = #DA2067
+$colors[info] = #216FEF
+$colors[success] = #00C379
+$colors[warning] = #E5A03B
+// * merge any (non-null) configured colors
+for $key, $value in hash-from-list(config("colors"))
+  $colors[$key] = convert($value) if $value
 
-// $colors-background_html = (hexo-config("colors.html_background") || #252525)
-// $x = convert(hexo-config("colors"))
-// p(length($x))
-// p($x)
-$colors-background = convert( hexo-config("colors.background") || "#f2f2f2" )
-$colors-background_html = hexo-config("colors.background_html") ? convert(hexo-config("colors.background_html")) : $color-Gray14;
-$colors-background_aside = convert( hexo-config("colors.background_aside") || "#f7f7f7" )
-$colors-background_bar = convert( hexo-config("colors.background_bar") || "#ccc" )
-$colors-background_header = convert( hexo-config("colors.background_header") || "#333" )
-$colors-background_div = convert( hexo-config("colors.background_div") || "#f8f8f8" )
-$colors-text = convert( hexo-config("colors.text") || "#222" )
-
-$c = #0578E8 #6C1687 #383 #bdb
+// p($colors)

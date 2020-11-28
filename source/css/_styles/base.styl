@@ -81,7 +81,7 @@ a:active {
 }
 
 aside.sidebar a {
-    color: $colors-text
+    color: $colors[text]
 }
 
 aside.sidebar a:focus {
@@ -104,16 +104,16 @@ a {
 }
 
 html, body {
-    background: $colors-background_html url('/images/line-tile.png?1416136272') top left
+    background: $colors[background_html] url('/images/line-tile.png?1416136272') top left
 }
 
 body > div {
-    background: $colors-background url('/images/noise.png?1416136272') top left;
+    background: $colors['background'] url('/images/noise.png?1416136272') top left;
     border-bottom: 1px solid #bfbfbf
 }
 
 body > div > div {
-    background: $colors-background_div url('/images/noise.png?1416136272') top left;
+    background: $colors[background_div] url('/images/noise.png?1416136272') top left;
     border-right: 1px solid #e0e0e0
 }
 
@@ -150,7 +150,7 @@ body > header h2 {
 
 body {
     line-height: 1.5em;
-    color: $colors-text
+    color: $colors[text]
 }
 
 h1 {
@@ -486,7 +486,7 @@ body > header {
 aside.sidebar {
     float: none;
     padding: 0 18px 1px;
-    background-color: $colors-background_aside;
+    background-color: $colors[background_aside];
     border-top: 1px solid #e0e0e0
 }
 
@@ -525,7 +525,7 @@ aside.sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-background_aside;
+        background-color: $colors[background_aside];
         border-top: 1px solid #eaeaea
     }
 
@@ -574,7 +574,7 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-background_aside;
+        background-color: $colors[background_aside];
         border-top: 1px solid #eaeaea
     }
 
@@ -663,7 +663,7 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-background_aside;
+        background-color: $colors[background_aside];
         border-top: 1px solid #eaeaea
     }
 
@@ -723,7 +723,7 @@ body.sidebar-footer .toggle-sidebar {
 }
 
 body > header {
-    background: $colors-background_header
+    background: $colors[background_header]
 }
 
 body > header h1 {
@@ -732,7 +732,7 @@ body > header h1 {
 }
 
 body > header h1 a, body > header h1 a:visited, body > header h1 a:hover {
-    color: $colors-background;
+    color: $colors['background'];
     text-decoration: none
 }
 
@@ -745,10 +745,10 @@ body > header h2 {
 
 body > nav {
     position: relative;
-    background-color: $colors-background_bar;
-    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors-background_bar, 40%), $colors-background_bar, darken($colors-background_bar, 15%));
-    // border-top: 1px solid $colors-background_bar;
-    // border-bottom: 1px solid $colors-background_bar;
+    background-color: $colors[background_bar];
+    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors[background_bar], 40%), $colors[background_bar], darken($colors[background_bar], 15%));
+    // border-top: 1px solid $colors[background_bar];
+    // border-bottom: 1px solid $colors[background_bar];
     padding-top: .35em;
     padding-bottom: .35em
 }
@@ -778,7 +778,7 @@ body > nav form .search {
     -webkit-box-shadow: #d1d1d1 0 1px;
     -moz-box-shadow: #d1d1d1 0 1px;
     box-shadow: #d1d1d1 0 1px;
-    background-color: $colors-background;
+    background-color: $colors['background'];
     border: 1px solid #b3b3b3;
     color: #888
 }
@@ -935,7 +935,7 @@ body > nav ul {
 }
 
 .no-placeholder body > nav .search {
-    background: $colors-background url('/images/search.png?1416136272') 0.3em 0.25em no-repeat;
+    background: $colors['background'] url('/images/search.png?1416136272') 0.3em 0.25em no-repeat;
     text-indent: 1.3em
 }
 
@@ -1199,7 +1199,7 @@ article > footer p.meta {
 #content .blog-index a[rel=full-article]:hover {
     background: #0181eb;
     text-shadow: none;
-    color: $colors-background_div
+    color: $colors[background_div]
 }
 
 #content .blog-index footer {
@@ -1802,7 +1802,7 @@ figure.code .highlight {
 }
 
 #blog-archives h1 {
-    color: $colors-text;
+    color: $colors[text];
     margin-bottom: .3em
 }
 
@@ -1982,7 +1982,7 @@ aside.sidebar a {
 }
 
 aside.sidebar:hover a {
-    color: $colors-text
+    color: $colors[text]
 }
 
 aside.sidebar:hover a:hover {
@@ -2028,7 +2028,7 @@ aside.sidebar:hover a:hover {
         -webkit-border-bottom-right-radius: 0.3em;
         border-bottom-right-radius: 0.3em;
         text-align: center;
-        background: $colors-background_div url('/images/noise.png?1416136272') top left;
+        background: $colors[background_div] url('/images/noise.png?1416136272') top left;
         border-bottom: 1px solid #e0e0e0;
         border-right: 1px solid #e0e0e0;
         content: "\00BB";
@@ -2119,9 +2119,9 @@ body > footer {
     font-size: .8em;
     color: #888;
     text-shadow: #d9d9d9 0 1px;
-    background-color: $colors-background_bar;
+    background-color: $colors[background_bar];
     background: url('/images/noise.png?1416136272'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-    border-top: 1px solid $colors-background;
+    border-top: 1px solid $colors['background'];
     position: relative;
     padding-top: 1em;
     padding-bottom: 1em;
