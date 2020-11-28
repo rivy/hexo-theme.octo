@@ -1,6 +1,7 @@
 /*! CSS Style Guide: http://codeguide.co/#css */
 
-$scheme    = hexo-config('scheme') ? hexo-config('scheme') : null;
+// $scheme = hexo-config('scheme') ? hexo-config('scheme') : null;
+$scheme = hexo-config('scheme');
 
 $custom_styles = (hexo-config('custom_file_path') && hexo-config('custom_file_path.styles')) ? "../../../../" + hexo-config('custom_file_path.styles') : custom;
 $custom_mixins = (hexo-config('custom_file_path') && hexo-config('custom_file_path.mixins')) ? "../../../../../" + hexo-config('custom_file_path.mixins') : custom;
