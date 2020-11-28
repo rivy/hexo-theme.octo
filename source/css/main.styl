@@ -1,5 +1,44 @@
 /*! CSS Style Guide: http://codeguide.co/#css */
 
+// * global utility functions
+
+get($map, $key) // => value
+  return $pair[1] if $pair[0] == $key for $pair in $map
+
+set($map, $key, $value) // => map
+  $keys = keys($map)
+  if $key in $keys
+    $index = index($keys,$key)
+    $map[$index][1] = $value
+  else
+    $map = $map ($key $value)
+  return $map
+
+is_null($variable) // => boolean
+  return ($variable is defined && $variable == null)
+
+or() // (/* arguments */) => null | value
+  // return the first defined, non-null value from argument list (arguments)
+  for $value in arguments
+    return $value if not is_null($value)
+  return null
+
+config($key, $default_value=null) // => null | value
+  return or(hexo-config($key), $default_value)
+
+config-or = config
+
+hash-from-list() // ($list) => hash
+  $props = arguments if length(arguments) > 1
+  $hash = {}
+  for $prop in $props
+    $key = $prop[0]
+    $value = $prop[1]
+    $hash[$key] = $value if $key
+  return $hash
+
+// * ----
+
 // $scheme = hexo-config('scheme') ? hexo-config('scheme') : null;
 $scheme = hexo-config('scheme');
 
