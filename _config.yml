@@ -52,10 +52,10 @@ stylesheets:
 scripts:
 
 colors:
-  html_background: null
   background: null
+  background_html: null
+  background_aside: null
+  background_bar: null
   background_div: null
+  background_header: null
   text: null
-  aside_background: null
-  bar_background: null
-  header_background: null

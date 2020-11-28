@@ -103,8 +103,8 @@ a {
     transition: color 0.3s
 }
 
-html {
-    background: $colors-html_background url('/images/line-tile.png?1416136272') top left
+html, body {
+    background: $colors-background_html url('/images/line-tile.png?1416136272') top left
 }
 
 body > div {
@@ -486,7 +486,7 @@ body > header {
 aside.sidebar {
     float: none;
     padding: 0 18px 1px;
-    background-color: $colors-aside_background;
+    background-color: $colors-background_aside;
     border-top: 1px solid #e0e0e0
 }
 
@@ -525,7 +525,7 @@ aside.sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-aside_background;
+        background-color: $colors-background_aside;
         border-top: 1px solid #eaeaea
     }
 
@@ -574,7 +574,7 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-aside_background;
+        background-color: $colors-background_aside;
         border-top: 1px solid #eaeaea
     }
 
@@ -663,7 +663,7 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors-aside_background;
+        background-color: $colors-background_aside;
         border-top: 1px solid #eaeaea
     }
 
@@ -723,7 +723,7 @@ body.sidebar-footer .toggle-sidebar {
 }
 
 body > header {
-    background: $colors-header_background
+    background: $colors-background_header
 }
 
 body > header h1 {
@@ -745,10 +745,10 @@ body > header h2 {
 
 body > nav {
     position: relative;
-    background-color: $colors-bar_background;
-    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors-bar_background, 40%), $colors-bar_background, darken($colors-bar_background, 15%));
-    // border-top: 1px solid $colors-bar_background;
-    // border-bottom: 1px solid $colors-bar_background;
+    background-color: $colors-background_bar;
+    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors-background_bar, 40%), $colors-background_bar, darken($colors-background_bar, 15%));
+    // border-top: 1px solid $colors-background_bar;
+    // border-bottom: 1px solid $colors-background_bar;
     padding-top: .35em;
     padding-bottom: .35em
 }
@@ -2119,7 +2119,7 @@ body > footer {
     font-size: .8em;
     color: #888;
     text-shadow: #d9d9d9 0 1px;
-    background-color: $colors-bar_background;
+    background-color: $colors-background_bar;
     background: url('/images/noise.png?1416136272'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
     border-top: 1px solid $colors-background;
     position: relative;

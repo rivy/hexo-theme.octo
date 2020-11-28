@@ -45,11 +45,29 @@ $logo-height = 0px + (hexo-config("logo.height") || 0)
 // Colors
 $colors = hexo-config("colorscheme") || "dark"
 
-// $colors-html_background = (hexo-config("colors.html_background") || #252525)
-$colors-html_background = convert( hexo-config("colors.html_background") || "#252525" )
-$colors-aside_background = convert( hexo-config("colors.aside_background") || "#f7f7f7" )
-$colors-bar_background = convert( hexo-config("colors.bar_background") || "#ccc" )
-$colors-header_background = convert( hexo-config("colors.header_background") || "#333" )
+$color-WhiteSmoke = whitesmoke /* #f5f5f5 */
+$color-Gray14 = #242424
+$color-Gray20 = #333333
+$color-Gray80 = #cccccc
+$color-Gray95 = #f2f2f2
+$color-Gray13 = #212121
+$color-GhostWhite = ghostwhite /* #f8f8ff */
+$color-Gray97 = #f7f7f7
+$color-Gainsboro = gainsboro /* #dcdcdc */
+//
+$color-222 = #222
+$color-333 = #333
+$color-ccc = #ccc
+$color-f8f8f8 = #f8f8f8
+
+// $colors-background_html = (hexo-config("colors.html_background") || #252525)
+$x = convert(hexo-config("colors"))
+p(length($x))
+p($x)
+$colors-background_html = hexo-config("colors.background_html") ? convert(hexo-config("colors.background_html")) : $color-Gray14;
+$colors-background_aside = convert( hexo-config("colors.background_aside") || "#f7f7f7" )
+$colors-background_bar = convert( hexo-config("colors.background_bar") || "#ccc" )
+$colors-background_header = convert( hexo-config("colors.background_header") || "#333" )
 $colors-background = convert( hexo-config("colors.background") || "#f2f2f2" )
 $colors-background_div = convert( hexo-config("colors.background") || "#f8f8f8" )
 $colors-text = convert( hexo-config("colors.text") || "#222" )
