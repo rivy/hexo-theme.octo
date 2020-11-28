@@ -61,14 +61,14 @@ $color-ccc = #ccc
 $color-f8f8f8 = #f8f8f8
 
 // $colors-background_html = (hexo-config("colors.html_background") || #252525)
-$x = convert(hexo-config("colors"))
-p(length($x))
-p($x)
+// $x = convert(hexo-config("colors"))
+// p(length($x))
+// p($x)
+$colors-background = convert( hexo-config("colors.background") || "#f2f2f2" )
 $colors-background_html = hexo-config("colors.background_html") ? convert(hexo-config("colors.background_html")) : $color-Gray14;
 $colors-background_aside = convert( hexo-config("colors.background_aside") || "#f7f7f7" )
 $colors-background_bar = convert( hexo-config("colors.background_bar") || "#ccc" )
 $colors-background_header = convert( hexo-config("colors.background_header") || "#333" )
-$colors-background = convert( hexo-config("colors.background") || "#f2f2f2" )
 $colors-background_div = convert( hexo-config("colors.background") || "#f8f8f8" )
 $colors-text = convert( hexo-config("colors.text") || "#222" )
 
