@@ -16,6 +16,8 @@
 
 - colors/palettes
   - ref: <https://theme-ui.com/theming/#colors>
+  - ref: <https://www.color-hex.com> , <https://www.color-hex.com/color-names.html>
+  - ref: <https://www.colormatters.com/web-safe-color-palette>
   - ref: [Coloors.co](https://coolors.co) => color palette generator
   - ref: [ColorMind.io](http://colormind.io) => color scheme generator
     - demo bootstrap web page at <http://colormind.io/bootstrap/#>
@@ -44,6 +46,13 @@
 - modes/themes
   - ref: <https://theme-ui.com/theming/#color-modes>
   - 'dark', ...
+  - ref: <https://timellenberger.com/blog/operating-system-dark-mode-in-your-css> @@ <https://archive.is/Jqhcv>
+  - ref: <https://web.dev/prefers-color-scheme> @@ <https://archive.is/1KkJs>
+  - ref: <https://github.com/twbs/bootstrap/issues/27514#issuecomment-675830174>
+  - ref: <https://github.com/openstyles/stylus/pull/736/files>
+  - ref: <https://www.geeksforgeeks.org/how-to-create-dark-light-mode-for-website-using-javascript-jquery> @@ <https://archive.is/kDA31>
+  - ref: <https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8> @@ <https://archive.is/NP7nr>
+    - eg: <https://ananyaneogi.com>
 
 ### [x] add sidebar collapse state
 
