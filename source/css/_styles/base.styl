@@ -312,7 +312,7 @@ article blockquote {
     font-size: 1.2em;
     line-height: 1.5em;
     padding-left: 1em;
-    border-left: 4px solid rgba(170, 170, 170, 0.5)
+    border-left: 4px solid lighten($colors['accent-dark'],25%)
 }
 
 article blockquote cite {
@@ -320,7 +320,7 @@ article blockquote cite {
 }
 
 article blockquote cite a {
-    color: #aaa !important;
+    color: lighten($colors['text'],50%) !important;
     word-wrap: break-word
 }
 
@@ -328,7 +328,7 @@ article blockquote cite:before {
     content: '\2014'; //* entity("EM DASH") == "—"
     padding-right: .3em;
     padding-left: .3em;
-    color: #aaa
+    color: lighten($colors['text'],50%)
 }
 
 @media only screen and (min-width: 992px) {
@@ -739,7 +739,7 @@ body > header h1 a, body > header h1 a:visited, body > header h1 a:hover {
 body > header h2 {
     margin: .2em 0 0;
     font-size: 1em;
-    color: #aaa;
+    color: darken($colors['background'],25%);
     font-weight: normal
 }
 
@@ -1064,7 +1064,7 @@ article header h1 a:hover {
 
 article header p {
     font-size: .9em;
-    color: #aaa;
+    color: lighten($colors['text'],50%);
     margin: 0
 }
 
@@ -1202,7 +1202,7 @@ article > footer p.meta {
 }
 
 #content .blog-index a[rel=full-article]:hover {
-    background: #0181eb;
+    background: $colors['link:hover'];
     text-shadow: none;
     color: $colors[background_div]
 }
@@ -1411,7 +1411,7 @@ html .gist .gist-file .gist-meta a[href*='#file'] {
 }
 
 html .gist .gist-file .gist-meta a[href*='#file']:hover {
-    color: #1863a1 !important
+    color: $colors['link:hover'] !important
 }
 
 html .gist .gist-file .gist-meta a[href*=raw] {
@@ -1999,7 +1999,7 @@ aside.sidebar:hover a:hover {
 }
 
 .aside-alt-link:hover, #pinboard_linkroll .pin-tag:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 @media only screen and (min-width: 768px) {
