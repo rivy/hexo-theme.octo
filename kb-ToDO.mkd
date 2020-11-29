@@ -18,15 +18,19 @@
   - ref: <https://theme-ui.com/theming/#colors>
   - ref: <https://www.color-hex.com> , <https://www.color-hex.com/color-names.html>
   - ref: <https://www.colormatters.com/web-safe-color-palette>
+  - ref: <https://colors.muz.li/color-palette-generator>
+  - ref: <https://toolness.github.io/accessible-color-matrix/>
   - ref: [Coloors.co](https://coolors.co) => color palette generator
   - ref: [ColorMind.io](http://colormind.io) => color scheme generator
     - demo bootstrap web page at <http://colormind.io/bootstrap/#>
     - eg ...
-      - Light shades (eg, "BLACK HAZE", #F3F7F8) Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
-      - Light accent (eg, "TUSSOCK", #C3854C) Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
       - Main brand color (eg, "SAN MARINO", #4966B1) This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+      - Light shade (eg, "BLACK HAZE", #F3F7F8) Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+      - Dark shade (eg, "BALTIC SEA", #392F37) Use as the text color for dark-on-light designs, or as the background for inverted designs.
+      - Light accent (eg, "TUSSOCK", #C3854C) Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
       - Dark accent (eg, "HIPPIE PINK", #A73F56) Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
-      - Dark shades (eg, "BALTIC SEA", #392F37) Use as the text color for dark-on-light designs, or as the background for inverted designs.
+  - eg ...
+    - ref: <https://visme.co/blog/website-color-schemes> @@ <https://archive.is/KP0gK>
 
 | Key          | Description                                                                                                     |
 |:-------------|:----------------------------------------------------------------------------------------------------------------|
