@@ -10,6 +10,16 @@
 
 - from [OctoPress](http://octopress.org)<sup>[[`@`](https://archive.is/ZncqB)]</sup>
 
+### [x] investigate "body > header h2" CSS
+
+- what is it for? subtitles? ... experimentation by adding an H2 subtitle to 'post.ejs' doesn't seem to do anything
+
+- CSS is for blog subtitle (not post subtitle); now, FIXED in header.ejs partial
+
+### [ ] simplify CSS via mixins
+
+- remove extra browser specific CSS entries (eg, `-webkit-transition`, `-moz-transition`, `-o-transition`) leaving just a mixin (`transition`) expanded to the browser entries PRN
+
 ### [ ] add semantic color
 
 - ref: [ThemeUI](https://theme-ui.com/theming)<sup>[[`@`](https://archive.is/9xRa4)]</sup>
