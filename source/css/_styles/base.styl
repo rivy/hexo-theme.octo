@@ -150,7 +150,7 @@ body > header h2 {
 
 body {
     line-height: 1.5em;
-    color: $colors[text]
+    color: $colors['text']
 }
 
 h1 {
@@ -486,8 +486,8 @@ body > header {
 aside.sidebar {
     float: none;
     padding: 0 18px 1px;
-    background-color: $colors[background_aside];
-    border-top: 1px solid #e0e0e0
+    background-color: $colors['background_aside'];
+    border-top: 1px solid darken($colors['background_aside'],10%)
 }
 
 .flex-content, article img, article video, article .flash-video, aside.sidebar img {
@@ -525,8 +525,8 @@ aside.sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors[background_aside];
-        border-top: 1px solid #eaeaea
+        background-color: $colors['background_aside'];
+        border-top: 1px solid darken($colors['background_aside'],8%)
     }
 
     body.sidebar-footer aside.sidebar section.odd, body.sidebar-footer aside.sidebar section.even {
@@ -574,8 +574,8 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors[background_aside];
-        border-top: 1px solid #eaeaea
+        background-color: $colors['background_aside'];
+        border-top: 1px solid darken($colors['background_aside'],8%)
     }
 
     aside.sidebar section.odd, aside.sidebar section.even {
@@ -663,8 +663,8 @@ body.sidebar-footer .toggle-sidebar {
         clear: left;
         margin: 0;
         padding: 0 35px 1px;
-        background-color: $colors[background_aside];
-        border-top: 1px solid #eaeaea
+        background-color: $colors['background_aside'];
+        border-top: 1px solid darken($colors['background_aside'],8%)
     }
 
     .collapse-sidebar aside.sidebar section.odd, .collapse-sidebar aside.sidebar section.even {
@@ -723,7 +723,7 @@ body.sidebar-footer .toggle-sidebar {
 }
 
 body > header {
-    background: $colors[background_header]
+    background: $colors['background_header']
 }
 
 body > header h1 {
@@ -745,10 +745,10 @@ body > header h2 {
 
 body > nav {
     position: relative;
-    background-color: $colors[background_bar];
-    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors[background_bar], 40%), $colors[background_bar], darken($colors[background_bar], 15%));
-    // border-top: 1px solid $colors[background_bar];
-    // border-bottom: 1px solid $colors[background_bar];
+    background-color: $colors['background_bar'];
+    background: url('/images/noise.png?1416136272'), linear-gradient(top, lighten($colors['background_bar'], 40%), $colors['background_bar'], darken($colors['background_bar'], 15%));
+    // border-top: 1px solid $colors['background_bar'];
+    // border-bottom: 1px solid $colors['background_bar'];
     padding-top: .35em;
     padding-bottom: .35em
 }
@@ -1920,15 +1920,16 @@ figure.code .highlight {
 }
 
 .side-shadow-border, aside.sidebar section h1, aside.sidebar li {
-    -webkit-box-shadow: #fff 0 1px;
-    -moz-box-shadow: #fff 0 1px;
-    box-shadow: #fff 0 1px
+    -webkit-box-shadow: lighten($colors['background_aside'],40%) 0 1px;
+    -moz-box-shadow: lighten($colors['background_aside'],40%) 0 1px;
+    box-shadow: lighten($colors['background_aside'],40%) 0 1px
 }
 
 aside.sidebar {
     overflow: hidden;
-    color: #4b4b4b;
-    text-shadow: #fff 0 1px
+    color: lighten($colors['text'],15%);
+    // background: $colors['background_aside'];
+    text-shadow: 0 1px 1px lighten($colors['background_aside'],10%)
 }
 
 aside.sidebar section {
@@ -1940,7 +1941,7 @@ aside.sidebar section {
 aside.sidebar section h1 {
     margin: 1.5em 0 0;
     padding-bottom: .2em;
-    border-bottom: 1px solid #e0e0e0
+    border-bottom: 1px solid darken($colors['background_aside'],10%)
 }
 
 aside.sidebar section h1 + p {
@@ -1971,7 +1972,7 @@ aside.sidebar li {
     list-style: none;
     padding: .5em 0;
     margin: 0;
-    border-bottom: 1px solid #e0e0e0
+    border-bottom: 1px solid darken($colors['background_aside'],10%)
 }
 
 aside.sidebar li p:last-child {
@@ -2033,9 +2034,9 @@ aside.sidebar:hover a:hover {
         -webkit-border-bottom-right-radius: 0.3em;
         border-bottom-right-radius: 0.3em;
         text-align: center;
-        background: $colors[background_div] url('/images/noise.png?1416136272') top left;
-        border-bottom: 1px solid #e0e0e0;
-        border-right: 1px solid #e0e0e0;
+        background: $colors['background_div'] url('/images/noise.png?1416136272') top left;
+        border-bottom: 1px solid darken($colors['background_div'],10%);
+        border-right: 1px solid darken($colors['background_div'],10%);
         content: "\00BB"; //* entity("RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK") == "»"
         text-indent: -1px
     }
@@ -2051,7 +2052,7 @@ aside.sidebar:hover a:hover {
     }
 
     .collapse-sidebar .toggle-sidebar:after {
-        border-left: 1px solid #e0e0e0;
+        border-left: 1px solid darken($colors['background_aside'],10%);
         text-shadow: #fff 0 1px;
         content: "\00AB"; //* entity("LEFT-POINTING DOUBLE ANGLE QUOTATION MARK") == "«"
         left: 0px;
@@ -2124,7 +2125,7 @@ body > footer {
     font-size: .8em;
     color: #888;
     text-shadow: #d9d9d9 0 1px;
-    background-color: $colors[background_bar];
+    background-color: $colors['background_bar'];
     background: url('/images/noise.png?1416136272'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
     border-top: 1px solid $colors['background'];
     position: relative;
