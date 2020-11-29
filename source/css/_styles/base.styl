@@ -1219,7 +1219,8 @@ article > footer p.meta {
 
 #content div.pagination {
     text-align: center;
-    font-size: .95em;
+    font-family: $font-family-subheading;
+    font-size: .85em;
     position: relative;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x;
     padding-top: 1.5em;
@@ -1239,7 +1240,7 @@ article > footer p.meta {
 
 #content div.pagination a.next:before {
     color: #aaaaaa;
-    content: '<< Older';
+    content: "« Older"; //* entity("LEFT-POINTING DOUBLE ANGLE QUOTATION MARK") == "«"
 }
 
 #content div.pagination a.prev {
@@ -1250,7 +1251,7 @@ article > footer p.meta {
 
 #content div.pagination a.prev:after {
     color: #aaaaaa;
-    content: 'Newer >>';
+    content: "Newer »"; //* entity("RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK") == "»"
 }
 
 #content div.pagination a:hover:before,
