@@ -270,11 +270,11 @@ q {
 }
 
 q:before {
-    content: "\201C"
+    content: "\201C" //* entity("LEFT DOUBLE QUOTATION MARK") == '“'
 }
 
 q:after {
-    content: "\201D"
+    content: "\201D" //* entity("RIGHT DOUBLE QUOTATION MARK") == '”'
 }
 
 em, dfn {
@@ -325,7 +325,7 @@ article blockquote cite a {
 }
 
 article blockquote cite:before {
-    content: '\2014';
+    content: '\2014'; //* entity("EM DASH") == "—"
     padding-right: .3em;
     padding-left: .3em;
     color: #aaa
@@ -1212,7 +1212,7 @@ article > footer p.meta {
 }
 
 .separator, article > footer .byline + time:before, article > footer time + time:before, article > footer .comments:before, article > footer .byline ~ .categories:before {
-    content: "\2022 ";
+    content: "\2022 "; //* entity("BULLET") == "•"
     padding: 0 .4em 0 .2em;
     display: inline-block
 }
@@ -1259,7 +1259,7 @@ article > footer p.meta {
 }
 
 #content div.pagination a[href*=archive]:before, #content div.pagination a[href*=archive]:after {
-    content: '\2014';
+    content: '\2014'; //* entity("EM DASH") == "—"
     padding: 0 .3em
 }
 
@@ -2036,7 +2036,7 @@ aside.sidebar:hover a:hover {
         background: $colors[background_div] url('/images/noise.png?1416136272') top left;
         border-bottom: 1px solid #e0e0e0;
         border-right: 1px solid #e0e0e0;
-        content: "\00BB";
+        content: "\00BB"; //* entity("RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK") == "»"
         text-indent: -1px
     }
 
@@ -2053,7 +2053,7 @@ aside.sidebar:hover a:hover {
     .collapse-sidebar .toggle-sidebar:after {
         border-left: 1px solid #e0e0e0;
         text-shadow: #fff 0 1px;
-        content: "\00AB";
+        content: "\00AB"; //* entity("LEFT-POINTING DOUBLE ANGLE QUOTATION MARK") == "«"
         left: 0px;
         right: 0;
         text-align: center;
