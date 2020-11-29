@@ -45,21 +45,6 @@ $logo-height = 0px + (hexo-config("logo.height") || 0)
 // Colors
 $color_scheme = hexo-config("colorscheme") || "dark"
 
-$color-Gray13 = #212121
-$color-Gray14 = #242424
-$color-Gray20 = #333333
-$color-Gray80 = #cccccc
-$color-Gray95 = #f2f2f2
-$color-Gray97 = #f7f7f7
-$color-Gainsboro = gainsboro /* #dcdcdc */
-$color-GhostWhite = ghostwhite /* #f8f8ff */
-$color-WhiteSmoke = whitesmoke /* #f5f5f5 */
-//
-$color-222 = #222 /* #222222 ~= Gray13 */
-$color-333 = #333 /* #333333 == Gray20 */
-$color-ccc = #ccc /* #cccccc == Gray80 */
-$color-f8f8f8 = #f8f8f8
-
 // | text         | Body foreground color                                                                                           |
 // | background   | Body background color                                                                                           |
 
@@ -75,23 +60,56 @@ $color-f8f8f8 = #f8f8f8
 // | warning      | ...                                                                                                             |
 // | danger/error | ...                                                                                                             |
 
+$color-Gray13 = #212121
+$color-Gray14 = #242424
+$color-Gray20 = #333333
+$color-Gray80 = #cccccc
+$color-Gray95 = #f2f2f2
+$color-Gray97 = #f7f7f7
+$color-Gainsboro = gainsboro //* #dcdcdc
+$color-GhostWhite = ghostwhite //* #f8f8ff
+$color-WhiteSmoke = whitesmoke //* #f5f5f5
+//
+$color-222 = #222 //* #222222 ~= Gray13
+$color-333 = #333 //* #333333 == Gray20
+$color-ccc = #ccc //* #cccccc == Gray80
+$color-f8f8f8 = #f8f8f8
+
 // * default colors
 $colors = {}
-$colors[background] = $color-Gray95
-$colors[background_html] = $color-Gray14
-$colors[background_aside] = $color-Gray97
-$colors[background_bar] = $color-Gray80
-$colors[background_header] = $color-Gray20
-$colors[background_div] = $color-WhiteSmoke
-$colors[text] = $color-Gray13
-$colors[failure] = #DA2067
-$colors[danger] = #DA2067
-$colors[error] = #DA2067
-$colors[info] = #216FEF
-$colors[success] = #00C379
-$colors[warning] = #E5A03B
+
+$colors['primary'] = $color-Gray13 // aka "main"
+$colors['secondary'] = royalblue
+
+$colors['light'] = $color-Gray95
+$colors['accent-light'] = $color-WhiteSmoke
+$colors['dark'] = $color-Gray14
+$colors['accent-dark'] = $color-Gray20
+
+$colors['failure'] = #DA2067
+$colors['danger'] = #DA2067
+$colors['error'] = #DA2067
+$colors['info'] = #216FEF
+$colors['success'] = #00C379
+$colors['warning'] = #E5A03B
+
 // * merge any (non-null) configured colors
 for $key, $value in hash-from-list(config("colors"))
   $colors[$key] = convert($value) if $value
+
+$colors['text'] = or($colors['text'], $colors['dark'])
+$colors['background'] = or($colors['background'], $colors['light'])
+
+$colors['link']         = or($colors['link'], hsl(210, 75%, 40%))
+$colors['link:focus']   = or($colors['link:focus'], lighten($colors['link'],25%))
+$colors['link:hover']   = or($colors['link:hover'], lighten($colors['link'],25%))
+$colors['link:active']  = or($colors['link:active'], darken($colors['link'],25%))
+$colors['link:visited'] = or($colors['link:visited'], hsl(280, 75%, 30%))
+
+$colors['background_html']   = or($colors['background_html'], $colors['dark'])
+$colors['background_aside']  = or($colors['background_aside'], $colors['light'])
+$colors['background_bar']    = or($colors['background_bar'], $colors['light'])
+$colors['background_header'] = or($colors['background_header'], $colors['accent-dark'])
+$colors['background_div']    = or($colors['background_div'], $colors['accent-light'])
 
 // p($colors)

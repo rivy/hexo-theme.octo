@@ -61,39 +61,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 a {
-    color: #1863a1
+    color: $colors['link']
 }
 
 a:visited {
-    color: #751590
+    color: $colors['link:visited']
 }
 
 a:focus {
-    color: #0181eb
+    color: $colors['link:focus']
 }
 
 a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 a:active {
-    color: #01579f
+    color: $colors['link:active']
 }
 
 aside.sidebar a {
-    color: $colors[text]
+    color: $colors['text']
 }
 
 aside.sidebar a:focus {
-    color: #0181eb
+    color: $colors['link:focus']
 }
 
 aside.sidebar a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 aside.sidebar a:active {
-    color: #01579f
+    color: $colors['link:active']
 }
 
 a {
@@ -104,17 +104,17 @@ a {
 }
 
 html, body {
-    background: $colors[background_html] url('/images/line-tile.png?1416136272') top left
+    background: $colors['background_html'] url('/images/line-tile.png?1416136272') top left
 }
 
 body > div {
     background: $colors['background'] url('/images/noise.png?1416136272') top left;
-    border-bottom: 1px solid #bfbfbf
+    border-bottom: 1px solid darken($colors['background'],20%)
 }
 
 body > div > div {
-    background: $colors[background_div] url('/images/noise.png?1416136272') top left;
-    border-right: 1px solid #e0e0e0
+    background: $colors['background_div'] url('/images/noise.png?1416136272') top left;
+    border-right: 1px solid darken($colors['background_div'],10%)
 }
 
 .heading, body > header h1, h1, h2, h3, h4, h5, h6 {
@@ -1185,7 +1185,7 @@ article > footer p.meta {
 }
 
 #content .blog-index article h1 a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 #content .blog-index a[rel=full-article] {
@@ -1255,7 +1255,7 @@ article > footer p.meta {
 
 #content div.pagination a:hover:before,
 #content div.pagination a:hover:after {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 #content div.pagination a[href*=archive]:before, #content div.pagination a[href*=archive]:after {
@@ -1831,7 +1831,7 @@ figure.code .highlight {
 }
 
 #blog-archives h1 a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 #blog-archives a.category, #blog-archives time {
@@ -1864,11 +1864,11 @@ figure.code .highlight {
 }
 
 #blog-archives a:hover, #blog-archives .entry-content a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 #blog-archives a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 @media only screen and (min-width: 550px) {
@@ -1991,7 +1991,7 @@ aside.sidebar:hover a {
 }
 
 aside.sidebar:hover a:hover {
-    color: #0181eb
+    color: $colors['link:hover']
 }
 
 .aside-alt-link, #pinboard_linkroll .pin-tag {
