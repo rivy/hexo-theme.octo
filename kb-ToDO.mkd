@@ -20,6 +20,11 @@
 
 - remove extra browser specific CSS entries (eg, `-webkit-transition`, `-moz-transition`, `-o-transition`) leaving just a mixin (`transition`) expanded to the browser entries PRN
 
+### add icons
+
+- [FontAwesome](https://fontawesome.com)
+- [Fontastic](http://fontastic.me)
+
 ### [ ] add semantic color
 
 - ref: [ThemeUI](https://theme-ui.com/theming)<sup>[[`@`](https://archive.is/9xRa4)]</sup>
@@ -67,6 +72,38 @@
   - ref: <https://www.geeksforgeeks.org/how-to-create-dark-light-mode-for-website-using-javascript-jquery> @@ <https://archive.is/kDA31>
   - ref: <https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8> @@ <https://archive.is/NP7nr>
     - eg: <https://ananyaneogi.com>
+
+- theme editors
+  - <https://github.com/aziz/tmTheme-Editor>
+    - eg: <http://tmtheme-editor.herokuapp.com/#!/editor/local/Humanity.tmTheme>
+  - <https://terminal.sexy> from <https://github.com/stayradiated/terminal.sexy>
+
+- color palettes
+  - <https://coolors.co>; eg: <https://coolors.co/c9fbff-c2fcf7-85bdbf-57737a-040f0f>
+  - <http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF> @@ <https://archive.is/OdLuA>
+  - <https://visme.co/blog/website-color-schemes>
+
+- color testers
+  - "#":"[colorable](http://jxnblk.com/colorable) - color evaluation (using WCAG accessibility guidelines)",
+  - "#":"[WCAG accessibility guidelines](https://www.w3.org/TR/WCAG20/#visual-audio-contrast)",
+
+  - <https://color.mediaandme.be>
+  - [Color Tool at material.io – by Google](material.io)
+  - <https://contrast-ratio.com/>
+  - <https://marijohannessen.github.io/color-contrast-checker/>
+  - <http://colorsafe.co/>
+  - <https://toolness.github.io/accessible-color-matrix/>
+
+- info
+  - <https://accessibility.18f.gov/color/>
+  - <http://oddbird.net/2017/1/16/color/>
+
+> ### VSCode themes
+>
+> ref: <https://code.visualstudio.com/api/references/theme-color>
+
+- theme conversion
+  - convert tmTheme to JSON => see <https://github.com/kkeri/tmtheme-to-json>
 
 ### [x] add sidebar collapse state
 
